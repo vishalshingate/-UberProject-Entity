@@ -7,8 +7,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.Index;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
@@ -28,6 +30,9 @@ import java.util.Date;
 @AllArgsConstructor
 @ToString
 @Builder
+@Table(indexes = {
+    @Index(columnList = "driver_id")
+})
 public class Booking extends BaseModel {
 
     @Enumerated(EnumType.STRING)
@@ -47,4 +52,9 @@ public class Booking extends BaseModel {
     @ManyToOne(fetch = FetchType.LAZY)
     private Passenger passenger;
 
+    @OneToOne
+    private ExactLocation startLocation;
+
+    @OneToOne
+    private ExactLocation endLocation;
 }

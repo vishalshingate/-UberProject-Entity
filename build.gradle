@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'com.example'
-version = '0.0.3-SNAPSHOT'
+version = '0.0.5-SNAPSHOT'
 
 java {
     toolchain {
@@ -22,7 +22,7 @@ configurations {
 // Force plain jar output and publishing
 tasks.register('plainJar', Jar) {
     archiveBaseName.set('UberProject-Entity')
-    archiveVersion.set('0.0.1-SNAPSHOT')
+    archiveVersion.set('0.0.5-SNAPSHOT')
     from sourceSets.main.output
 }
 
@@ -50,6 +50,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
 }
 
 tasks.named('test') {

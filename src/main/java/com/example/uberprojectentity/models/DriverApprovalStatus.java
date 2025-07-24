@@ -6,5 +6,5 @@ public enum DriverApprovalStatus {
 
     DENIED,
 
-    PENDING,
+    PENDING
 }

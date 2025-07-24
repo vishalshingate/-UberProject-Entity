@@ -1,7 +1,0 @@
-ALTER TABLE car
-DROP COLUMN car_type;
-
-ALTER TABLE car
-    ADD car_type ENUM('XL,SEDAN,HATCHBACK,COMPACT_SUV,SUV');
-
-
